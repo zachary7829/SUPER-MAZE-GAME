@@ -3,7 +3,7 @@ for (var i = 0 ; i < highestTimeoutId ; i++) {
   clearTimeout(i); 
 }
 
-const col = {"level1":{"rect":["rect1", "rect2", "rect3", "rect4", "rect5"],"rect1":{"xpos":100,"ypos":200,"rectwidth":100,"rectheight":50},"rect2":{"xpos":200,"ypos":200,"rectwidth":100,"rectheight":50},"rect3":{"xpos":200,"ypos":00,"rectwidth":100,"rectheight":120},"rect4":{"xpos":100,"ypos":70,"rectwidth":100,"rectheight":50},"rect5":{"xpos":360,"ypos":70,"rectwidth":100,"rectheight":200},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":30,"y":130},"enem":{"xpos":50000,"ypos":50000,"rectwidth":50,"rectheight":50}},"level2":{"rect":["rect1", "rect2", "rect3", "rect4", "rect5", "rect6"],"rect1":{"xpos":130,"ypos":50,"rectwidth":50,"rectheight":50},"rect2":{"xpos":130,"ypos":150,"rectwidth":50,"rectheight":50},"rect3":{"xpos":70,"ypos":-20,"rectwidth":10,"rectheight":150},"rect4":{"xpos":220,"ypos":150,"rectwidth":10,"rectheight":100},"rect5":{"xpos":360,"ypos":70,"rectwidth":10,"rectheight":200},"rect6":{"xpos":280,"ypos":0,"rectwidth":10,"rectheight":200},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":10,"y":10},"enem":{"xpos":180,"ypos":100,"rectwidth":50,"rectheight":50}},"level3":{"rect":["rect1", "rect2", "rect3"],"rect1":{"xpos":360,"ypos":70,"rectwidth":100,"rectheight":200},"rect2":{"xpos":200,"ypos":00,"rectwidth":100,"rectheight":120},"rect3":{"xpos":100,"ypos":70,"rectwidth":100,"rectheight":50},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":30,"y":130},"enem":{"xpos":100,"ypos":160,"rectwidth":200,"rectheight":100}}};
+const col = {"level1":{"rect":["rect1", "rect2", "rect3", "rect4", "rect5"],"rect1":{"xpos":100,"ypos":200,"rectwidth":100,"rectheight":50},"rect2":{"xpos":200,"ypos":200,"rectwidth":100,"rectheight":50},"rect3":{"xpos":200,"ypos":00,"rectwidth":100,"rectheight":120},"rect4":{"xpos":100,"ypos":70,"rectwidth":100,"rectheight":50},"rect5":{"xpos":360,"ypos":70,"rectwidth":100,"rectheight":200},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":30,"y":130},"enem":{"xpos":50000,"ypos":50000,"rectwidth":50,"rectheight":50}},"level2":{"rect":["rect1", "rect2", "rect3", "rect4", "rect5", "rect6"],"rect1":{"xpos":130,"ypos":50,"rectwidth":50,"rectheight":50},"rect2":{"xpos":130,"ypos":150,"rectwidth":50,"rectheight":50},"rect3":{"xpos":70,"ypos":-20,"rectwidth":10,"rectheight":150},"rect4":{"xpos":220,"ypos":150,"rectwidth":10,"rectheight":100},"rect5":{"xpos":360,"ypos":70,"rectwidth":10,"rectheight":200},"rect6":{"xpos":280,"ypos":0,"rectwidth":10,"rectheight":200},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":10,"y":10},"enem":{"xpos":180,"ypos":100,"rectwidth":50,"rectheight":50}},"level3":{"rect":["rect1", "rect2", "rect3"],"rect1":{"xpos":360,"ypos":70,"rectwidth":100,"rectheight":200},"rect2":{"xpos":200,"ypos":00,"rectwidth":100,"rectheight":120},"rect3":{"xpos":100,"ypos":70,"rectwidth":100,"rectheight":50},"vict":{"xpos":450,"ypos":200,"rectwidth":50,"rectheight":50},"playerspawn":{"x":30,"y":130},"enem":{"xpos":100,"ypos":160,"rectwidth":200,"rectheight":100}}}; //This json contains all levels + staring position for player in all levels, since the json does contains arrays (ex  the rect key) plus those are used for the drawmap func I consider this use of arrays
 var level = col['level1'];
 
 var lvlid = 1;
@@ -251,6 +251,12 @@ function drawmap(){
     case 3:
       level = col['level3'];
       break;
+    default:
+      window.location.replace("win.html");
+      highestTimeoutId = setTimeout(";");
+      for (var i = 0 ; i < highestTimeoutId ; i++) {
+        clearTimeout(i); 
+}
   }
   for (let i = 0; i < level['rect'].length; i++) {
     ctx.fillRect((level[((level['rect'])[i])])['xpos'], (level[((level['rect'])[i])])['ypos'], (level[((level['rect'])[i])])['rectwidth'], (level[((level['rect'])[i])])['rectheight']);
